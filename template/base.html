@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+
+  </head>
+  <body>
+    <!--  navigation Bar-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'main' %}">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'cr' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+      {% block content %}
+      {% endblock %}
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        <button type="button" name="button" class = "btn"><a href="#"> About Us</a></button>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+  </body>
+  <link rel="stylesheet" href="{% static "css/css1.css" %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</html>

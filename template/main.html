@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  home
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>A Simple CRUD Site</h1>
+    <p>Which deals with the students</p>
+    {% if user.is_authenticated %}
+  <p>Please <a href="{% url 'cr' %}">Sign up</a>
+    {% endif %} | <a href="{% url 'login' %}">Login</a></p>
+  </div>
+</div>
+{% endblock %}

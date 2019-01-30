@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Login User</h1><br><br>
+    <form method="POST" class="">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <br>
+      <button type="submit" class="save btn btn-default">Login</button>
+    </form><br><br>
+    <a href="{% url 'cr' %}"><button type="button" name="button" class="btn btn-primary">Sign Up</button></a>
+    <a href="#"><button type="button" name="button" class="btn btn-danger navbar-right">Forget Password</button></a>
+  </div>
+
+
+</div>
+{% endblock %}

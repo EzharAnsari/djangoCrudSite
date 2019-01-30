@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Student Detail
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Student List</h1>
+    <p>click on the name of student for more actions</p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Branch</th>
+          <th>Year</th>
+          <th>Roll No.</th>
+          <th>Email</th>
+          <th>Mobile No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for std in st %}
+        <tr>
+          <td><a href="{% url 'student_detail' pk=std.pk %}">{{ std.name }}</a></td>
+          <td>{{ std.branch }}</td>
+          <td>{{ std.year }}</td>
+          <td>{{ std.rollNo }}</td>
+          <td>{{ std.email }}</td>
+          <td>{{ std.mobileNo }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+{% endblock %}

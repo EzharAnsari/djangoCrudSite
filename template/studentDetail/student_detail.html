@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Student Detail
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Student Detail</h1>
+    <div class="row">
+      <div class="col-lg-6">
+        <table>
+          <tr>
+            <td>Name : </td>
+            <td>{{ post.name }}</td>
+          </tr>
+          <tr>
+            <td>Branch : </td>
+            <td>{{ post.branch }}</td>
+          </tr>
+          <tr>
+            <td>Year : </td>
+            <td>{{ post.year }}</td>
+          </tr>
+          <tr>
+            <td>Roll No. : </td>
+            <td>{{ post.rollNo }}</td>
+          </tr>
+          <tr>
+            <td>Email : </td>
+            <td>{{ post.email }}</td>
+          </tr>
+          <tr>
+            <td>Year : </td>
+            <td>{{ post.year }}</td>
+          </tr>
+          <tr>
+            <td>Mobile No. : </td>
+            <td>{{ post.mobileNo }}</td>
+          </tr>
+        </table>
+        <!-- {{ post.image }} -->
+      </div>
+      <div class="col-lg-6">
+        <img src="../../media/{{ post.image }}" alt="oo no" height="150" width="150" class="img-circle">
+      </div>
+    </div>
+
+    <a class="btn btn-default" href="{% url 'student_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <button type="button" name="button" class="btn btn-default navbar-right"><a href="{% url 'home' post.pk %}">Connfirm</a></button>
+
+  </div>
+
+</div>
+
+{% endblock %}
